@@ -91,7 +91,7 @@ namespace OpenHardwareMonitor.Utilities {
         if (string.IsNullOrEmpty(line))
           return false;
         
-        identifiers = line.Split(',').Skip(1).ToArray();
+      //  identifiers = line.Split(',').Skip(1).ToArray();
       } catch {
         identifiers = null;
         return false;
@@ -118,8 +118,8 @@ namespace OpenHardwareMonitor.Utilities {
         list.Add(sensor);
       });
       visitor.VisitComputer(computer);
-      sensors = list.ToArray();
-      identifiers = sensors.Select(s => s.Identifier.ToString()).ToArray();
+    //  sensors = list.ToArray();
+     // identifiers = sensors.Select(s => s.Identifier.ToString()).ToArray();
 
       using (StreamWriter writer = new StreamWriter(fileName, false)) {
         writer.Write(",");

@@ -187,15 +187,15 @@ namespace OpenHardwareMonitor.GUI {
       foreach (ISensor sensor in sensors) {
         var series = new LineSeries();
         if (sensor.SensorType == SensorType.Temperature) {
-          series.ItemsSource = sensor.Values.Select(value => new DataPoint {
+         /* series.ItemsSource = sensor.Values.Select(value => new DataPoint {
             X = (now - value.Time).TotalSeconds,
             Y = unitManager.TemperatureUnit == TemperatureUnit.Celsius ? 
               value.Value : UnitManager.CelsiusToFahrenheit(value.Value).Value
-          });
+          });*/
         } else {
-          series.ItemsSource = sensor.Values.Select(value => new DataPoint {
+          /*series.ItemsSource = sensor.Values.Select(value => new DataPoint {
             X = (now - value.Time).TotalSeconds, Y = value.Value
-          });
+          });*/
         }
         series.Color = colors[sensor].ToOxyColor();
         series.StrokeThickness = 1;
@@ -206,11 +206,11 @@ namespace OpenHardwareMonitor.GUI {
         types.Add(sensor.SensorType);
       }
 
-      foreach (var pair in axes.Reverse()) {
+      /*foreach (var pair in axes.Reverse()) {
         var axis = pair.Value;
         var type = pair.Key;
         axis.IsAxisVisible = types.Contains(type);
-      } 
+      } */
 
       UpdateAxesPosition();
       InvalidatePlot();
@@ -218,9 +218,9 @@ namespace OpenHardwareMonitor.GUI {
 
     private void UpdateAxesPosition() {
       if (stackedAxes.Value) {
-        var count = axes.Values.Count(axis => axis.IsAxisVisible);
+       // var count = axes.Values.Count(axis => axis.IsAxisVisible);
         var start = 0.0;
-        foreach (var pair in axes.Reverse()) {
+       /* foreach (var pair in axes.Reverse()) {
           var axis = pair.Value;
           var type = pair.Key;
           axis.StartPosition = start;
@@ -230,10 +230,10 @@ namespace OpenHardwareMonitor.GUI {
           axis.PositionTier = 0;
           axis.MajorGridlineStyle = LineStyle.Solid;
           axis.MinorGridlineStyle = LineStyle.Solid;   
-        }
+        }*/
       } else {
         var tier = 0;
-        foreach (var pair in axes.Reverse()) {
+      /*  foreach (var pair in axes.Reverse()) {
           var axis = pair.Value;
           var type = pair.Key;
           if (axis.IsAxisVisible) {
@@ -248,7 +248,7 @@ namespace OpenHardwareMonitor.GUI {
           }
           axis.MajorGridlineStyle = LineStyle.None;
           axis.MinorGridlineStyle = LineStyle.None;          
-        }
+        }*/
       }
 
     }
