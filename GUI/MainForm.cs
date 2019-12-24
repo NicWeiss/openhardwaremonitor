@@ -868,7 +868,11 @@ namespace OpenHardwareMonitor.GUI
         public void print_cmd_report()
         {
             string report = computer.GetReport();
-            Console.WriteLine(report);
+            //Console.WriteLine(report); 
+            using (TextWriter w = new StreamWriter("sensors_list.txt"))
+            {
+                w.Write(report);
+            }
         }
 
         private void SysTrayHideShow()

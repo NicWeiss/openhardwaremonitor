@@ -27,9 +27,6 @@ namespace OpenHardwareMonitor
             Application.SetCompatibleTextRenderingDefault(false);
             var consoleWriter = new GUIConsoleWriter();
 
-            string test = "Console Report by Nic Weiss";
-            Console.WriteLine(test);
-
             MainForm tst = new MainForm();
             tst.print_cmd_report();
         }

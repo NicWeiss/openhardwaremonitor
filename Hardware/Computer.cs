@@ -317,32 +317,14 @@ namespace OpenHardwareMonitor.Hardware {
         w.WriteLine("Sensors");
         w.WriteLine();
         foreach (IGroup group in groups) {
-          foreach (IHardware hardware in group.Hardware)
-            ReportHardwareSensorTree(hardware, w, "");
-        }
+                    foreach (IHardware hardware in group.Hardware)
+                    {
+                         ReportHardwareSensorTree(hardware, w, "");
+                    }
+
+                }
         w.WriteLine();
 
-        NewSection(w);
-        w.WriteLine("Parameters");
-        w.WriteLine();
-        foreach (IGroup group in groups) {
-          foreach (IHardware hardware in group.Hardware)
-            ReportHardwareParameterTree(hardware, w, "");
-        }
-        w.WriteLine();
-
-        foreach (IGroup group in groups) {
-          string report = group.GetReport();
-          if (!string.IsNullOrEmpty(report)) {
-            NewSection(w);
-            w.Write(report);
-          }
-
-          IHardware[] hardwareArray = group.Hardware;
-          foreach (IHardware hardware in hardwareArray)
-            ReportHardware(hardware, w);
-
-        }
         return w.ToString();
       }
     }

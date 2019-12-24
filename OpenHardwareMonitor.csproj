@@ -8,10 +8,10 @@
     <SchemaVersion>2.0</SchemaVersion>
     <OutputType>WinExe</OutputType>
     <NoStandardLibraries>false</NoStandardLibraries>
-    <AssemblyName>OpenHardwareMonitor</AssemblyName>
+    <AssemblyName>OpenHardwareMonitorReport</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <RootNamespace>OpenHardwareMonitor</RootNamespace>
+    <RootNamespace>OpenHardwareMonitorReport</RootNamespace>
     <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
     <ApplicationManifest>Resources\app.manifest</ApplicationManifest>
     <StartupObject>OpenHardwareMonitor.Program</StartupObject>
